@@ -1,6 +1,6 @@
-# Playlistify
-
 ![Playlistify](icon.png)
+
+# Playlistify
 
 **A desktop music player for your local music library.**
 
@@ -19,41 +19,22 @@ Playlistify lets you play music from files on your device, organize songs into p
 - **Discord Rich Presence** — optionally show the current song and playback speed in your Discord activity.
 - **Automatic updates** — installed builds can check for updates published through GitHub Releases.
 
-## Getting started
+## Installation
 
-### Requirements
+Getting started with Playlistify is simple!
 
-- Windows
-- [Node.js](https://nodejs.org/) (Node.js 20 or newer recommended)
-- npm (included with Node.js)
-- [Discord desktop app](https://discord.com/download) if you want to use Discord Rich Presence
+1. Visit the [Playlistify Releases](https://github.com/KAJDFLSDFSLGPDIUOD/Playlistify/releases) page.
+2. Find the latest release.
+3. Download **Playlistify-Installer.exe**.
+4. Once downloaded, run the installer.
+5. Wait for the installation to finish.
+6. Playlistify should automatically launch once installation is complete!
 
-### Run from source
+That's it! You're ready to enjoy your music with Playlistify.
 
-1. Download or clone this repository.
-2. Open a terminal in the project folder.
-3. Install the dependencies:
+### Updating Playlistify
 
-   ```bash
-   npm install
-   ```
-
-4. Start Playlistify:
-
-   ```bash
-   npm start
-   ```
-
-## Building the Windows installer
-
-To build the Windows installer locally:
-
-```bash
-npm install
-npx electron-builder --win nsis
-```
-
-The installer is generated in the `dist` directory. The configured installer filename is `Playlistify-Installer.exe`.
+To update Playlistify, simply visit the [Releases page](https://github.com/KAJDFLSDFSLGPDIUOD/Playlistify/releases), download the latest `Playlistify-Installer.exe`, and run it to install the updated version.
 
 ## Using Playlistify
 
