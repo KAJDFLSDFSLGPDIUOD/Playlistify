@@ -18,9 +18,30 @@
   "build": {
     "appId": "com.example.playlistify",
     "productName": "Playlistify",
-    "files": ["main.js", "preload.js", "discord.js", "index.html", "icon.png"],
-    "win": { "target": ["nsis"], "icon": "icon.png" },
-    "nsis": { "oneClick": true, "perMachine": false, "artifactName": "Playlistify-Installer.exe" },
-    "publish": [{ "provider": "github", "releaseType": "release" }]
+    "files": [
+      "main.js",
+      "preload.js",
+      "discord.js",
+      "index.html",
+      "icon.png",
+      "splash.html"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "Playlistify-Installer.exe"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "releaseType": "release"
+      }
+    ]
   }
 }

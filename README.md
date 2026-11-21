@@ -34,7 +34,9 @@ That's it! You're ready to enjoy your music with Playlistify.
 
 ### Updating Playlistify
 
-To update Playlistify, simply visit the [Releases page](https://github.com/KAJDFLSDFSLGPDIUOD/Playlistify/releases), download the latest `Playlistify-Installer.exe`, and run it to install the updated version.
+Updates install themselves. When you open Playlistify and a newer version exists, a small **Updating Playlistify** window shows the download progress, installs the update, and then opens the app by itself. If there is no update, or you are offline, Playlistify just opens.
+
+You can still download the latest `Playlistify-Installer.exe` from the [Releases page](https://github.com/KAJDFLSDFSLGPDIUOD/Playlistify/releases) at any time.
 
 ## Using Playlistify
 
@@ -67,7 +69,8 @@ Discord Rich Presence sends the activity details needed to show your listening s
 | File | Purpose |
 | --- | --- |
 | `index.html` | Player interface, playback logic, playlist management, and WAV export |
-| `main.js` | Electron main process, application window, Discord integration, and update checks |
+| `main.js` | Electron main process, application window, Discord integration, and the update screen |
+| `splash.html` | The update screen shown while Playlistify updates itself |
 | `preload.js` | Secure bridge between the renderer and Electron's Discord presence integration |
 | `discord.js` | Discord Rich Presence connection over the local Discord IPC pipe |
 | `package.json` | Dependencies, npm scripts, and Windows installer configuration |
@@ -77,9 +80,9 @@ Discord Rich Presence sends the activity details needed to show your listening s
 
 ## Updates and releases
 
-The GitHub Actions workflow builds a Windows installer when changes are pushed to the `main` branch, and can also be run manually from the Actions tab. It publishes the installer as a GitHub Release.
+The GitHub Actions workflow builds a Windows installer when changes are pushed to the `main` branch, and can also be run manually from the Actions tab. It gives every build a higher version number automatically and publishes the installer as a GitHub Release.
 
-Installed versions check for updates through `electron-updater`. Running the project with `npm start` does not perform the packaged-app update check.
+Each time the installed app starts, it checks for a newer release through `electron-updater`. If one exists, an update screen downloads and installs it, then opens the new version. The update check is skipped when running the project with `npm start`, and the app opens normally after 10 seconds if the check cannot finish.
 
 ## Technologies
 
