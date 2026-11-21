@@ -1,0 +1,26 @@
+{
+  "name": "playlistify",
+  "version": "1.2.0",
+  "description": "Music player with playlists, speed control, volume and Discord status",
+  "main": "main.js",
+  "author": "Playlistify",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.example.playlistify",
+    "productName": "Playlistify",
+    "files": ["main.js", "preload.js", "discord.js", "index.html", "icon.png"],
+    "win": { "target": ["nsis"], "icon": "icon.png" },
+    "nsis": { "oneClick": true, "perMachine": false, "artifactName": "Playlistify-Installer.exe" },
+    "publish": [{ "provider": "github", "releaseType": "release" }]
+  }
+}
