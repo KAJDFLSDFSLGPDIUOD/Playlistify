@@ -16,7 +16,7 @@ ONE-TIME SETUP (about 5 minutes)
      (This replaces any older copy of Playlistify you installed. Your songs are kept.)
 
      Handy permanent link (replace YOURNAME and REPO):
-     https://github.com/YOURNAME/REPO/releases/latest/download/Playlistify-Installer.exe
+     https://github.com/KAJDFLSDFSLGPDIUOD/Playlistify/releases/latest/download/Playlistify-Installer.exe
 
 UPDATING LATER
   Upload the changed file (for example a new index.html) to the repository.
