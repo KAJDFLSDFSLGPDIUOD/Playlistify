@@ -2,6 +2,7 @@ const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
 const { Discord } = require('./discord');
+const { VRChat, searchLyrics } = require('./vrchat');
 
 // Discord Application ID (public, safe to keep in the app).
 const DISCORD_CLIENT_ID = '1573501566202151022';
@@ -9,6 +10,9 @@ const DISCORD_CLIENT_ID = '1573501566202151022';
 let win = null;
 let splash = null;
 let discord = null;
+const vrc = new VRChat();
+ipcMain.on('vrc-say', (e, t) => vrc.say(t));
+ipcMain.handle('lyrics-search', (e, q) => searchLyrics(String(q).slice(0, 200)));
 let lastStatus = '';
 
 function setStatus(text) {
@@ -109,5 +113,5 @@ app.whenReady().then(() => {
   else startApp();                                // "npm start": no update check
 });
 
-app.on('before-quit', () => { if (discord) discord.stop(); });
+app.on('before-quit', () => { vrc.clear(); if (discord) discord.stop(); });
 app.on('window-all-closed', () => app.quit());

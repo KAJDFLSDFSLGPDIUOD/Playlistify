@@ -22,6 +22,7 @@
       "main.js",
       "preload.js",
       "discord.js",
+      "vrchat.js",
       "index.html",
       "icon.png",
       "splash.html"
